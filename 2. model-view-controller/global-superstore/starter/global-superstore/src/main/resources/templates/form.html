@@ -1,0 +1,27 @@
+<html >
+<html>
+    <head> 
+        <link th:href="@{/form-stylesheet.css}" rel="stylesheet"> 
+    </head>    
+    <body>
+        <div class="topnav">
+            <a class="active">Form</a>
+            <a>Inventory</a>
+        </div>
+        <div class="container">    
+            <h2> Global Superstore </h2>
+            <form method="post">
+                <select class="select">
+                    <option style="color:blue">Choose Category</option>
+                    <option> Placeholder </option>
+                </select>
+                <input type="text" placeholder="Name">
+                <input class="half" type="text" placeholder="Price">
+                <input class="half" type="text" placeholder="Discount">
+                <h4>Order Date</h4>
+                <input type="date" style="color:black">
+                <input type="submit" value="Submit Item">
+            </form>
+        </div>      
+    </body>
+</html>

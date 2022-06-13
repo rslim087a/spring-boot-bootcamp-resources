@@ -1,0 +1,23 @@
+body {
+        background-color: #263238;
+}
+  
+h1 {
+    color: white;
+    text-align: center;
+}
+  
+p {
+    font-family: verdana;
+    font-size: 20px;
+    color: white;
+}
+
+.container {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    text-align: center;
+}

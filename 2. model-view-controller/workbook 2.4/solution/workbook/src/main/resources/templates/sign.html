@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <title>Traffic Sign</title>
+    </head>
+    <body>
+        <h1 th:text = "'Speed: ' + ${speed}"></h1>
+        <img th:src="${speed > 60} ? 'images/slow-down.png' : 'images/speed-limit.png'" width="200"/>
+    </body>
+</html>

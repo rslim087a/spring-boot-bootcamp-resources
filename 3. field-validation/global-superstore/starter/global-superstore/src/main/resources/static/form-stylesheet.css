@@ -1,0 +1,93 @@
+  body {
+    font-size: 1.25em;
+    font-family: sans-serif; 
+  }     
+
+  .container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  } 
+
+  h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    font-weight: 600;  
+    text-align: center;
+    margin-bottom: 8%;
+  }
+
+  form input, select {
+    padding: .75em 1em;
+    appearance: none;
+    line-height: normal;
+    border: none;
+    margin-bottom: 4.5%;
+    font: inherit;
+    width: 100%;
+    background: #222222;
+    color: white;
+   }
+  
+   input[type=submit] {
+    background: green;
+    font-size: 22px;
+   }
+
+
+   input[type=submit]:hover {
+    background-color: red; 
+    cursor: pointer;
+   }
+  
+  form {
+    max-width: 30em;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-end; 
+   }
+
+    form .half {
+        width: calc(50% - 1px); 
+    }
+
+    input[type=date] {
+      background-color: #EDF7FF;
+      border: solid;
+     }
+
+    html {
+        -webkit-font-smoothing: antialiased; 
+    }
+
+    .topnav {
+      background-color: #222222;
+      overflow: hidden;
+      font-family: sans-serif;
+  
+    }
+    
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      padding: 14px 16px;
+      font-weight: 300;
+      text-decoration: none;
+      font-size: 24px;
+    }
+    
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    
+    .topnav a.active {
+      background-color: green;
+      color: white;
+    }
+    
+    

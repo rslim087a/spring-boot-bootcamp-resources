@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dealership</title>
+    </head>
+    <body>
+        <h3>Dealership</h3>
+        <div th:if="${budget >= 5000}">
+            <div th:switch="${make}">
+                <p th:case="'Toyota'">Toyota Corolla: $5,000</p>
+                <p th:case="'Volkswagen'">Volkswagen Jetta: $6,000</p>
+                <p th:case="'Ford'">Ford Escape: $7,000</p>
+                <p th:case="'Honda'">Honda Civic: $8,000</p>
+                <p th:case="*">No cars match your query.</p>
+            </div>
+        </div>
+        <div th:unless="${budget >= 5000}">
+            <p>Sorry, we don't have any cars below $5,000</p>
+        </div>
+    </body>
+</html>

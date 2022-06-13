@@ -1,0 +1,123 @@
+body {
+  font-family: Arial, Helvetica, sans-serif; 
+}   
+.container {
+    position: relative;
+    left: 50%;
+    top: 5%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    background-color: #263238;
+} 
+
+table {
+	  width: 100%;
+	  border-spacing: 0;
+    position: absolute;
+    text-align: center;
+    border-right: 1px solid black;
+
+}
+table .head {
+		 position: relative;
+		 clip: auto;
+		 height: auto;
+		 width: auto;
+		 overflow: auto;
+}
+table .head th {
+	 background-color: green;
+	 border: 0.5px solid black;
+   font-size: 22px;
+	 font-weight: normal;
+	 text-align: center;
+	 color: white;
+}
+
+table th {
+    display: table-cell;
+}
+table th, td {
+		 padding: 0.75em;
+}
+table tbody {
+		 display: table-row-group;
+}
+
+table tbody td {
+    text-align: right;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    text-align: center;
+    font-size: 18px;
+}
+
+table tbody td[type=currency], td[type=date] {
+     text-align: right;
+}
+
+table tbody td[type=currency]:before {
+    content: "$";
+  }
+  
+.table-button {
+    cursor: pointer;
+    float: left;
+    border: solid 1px gray;
+    font: #EDF7FF;
+    width: 80%;
+    background-color: green;
+    font-size: 16px;
+    text-decoration: none;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    font-family: sans-serif;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+    padding-left: .5em;
+    padding-right: .5em;
+  }
+
+
+  
+  .table-button:hover {
+    background-color: gray;
+  }
+  
+  .topnav {
+    background-color: #222222;
+    overflow: hidden;
+    font-family: sans-serif;
+  }
+  
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    padding: 14px 16px;
+    font-weight: 300;
+    text-decoration: none;
+    font-size: 24px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: green;
+    color: white;
+  }
+  
+  .alert {
+    position: relative;
+    top: 2%;
+    padding: 30px;
+    background-color: #f44336;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.6s;
+    margin-bottom: 15px;
+  }
+  
+  .alert.success {background-color: #04AA6D;}

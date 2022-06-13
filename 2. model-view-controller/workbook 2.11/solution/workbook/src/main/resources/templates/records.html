@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sales Records</title>
+    </head>
+    <body>
+        <h2>Sales Records</h2>
+        <table border="solid" width="100%">
+          <tr>
+            <th>Item</th>
+            <th>Revenue</th>
+            <th>Cost</th>
+            <th>Profit</th>
+          </tr>
+          <tr th:each="record : ${records}" th:style="${record.revenue - record.cost >= 0} ? 'background: green' : 'background: red'">
+            <td th:text="${record.item}"> </td>
+            <td th:text="${#numbers.formatCurrency(record.revenue)}"> </td>
+            <td th:text="${#numbers.formatCurrency(record.cost)}"> </td>
+            <td th:text="${#numbers.formatCurrency(record.revenue - record.cost)}"> </td>
+          </tr>
+        </table>
+    </body>
+</html>

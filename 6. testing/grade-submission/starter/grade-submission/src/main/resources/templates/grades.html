@@ -1,0 +1,32 @@
+<!DOCTYPE>
+<html>
+  <head> 
+    <title>Grades</title>
+    <link th:href="@{/grades-stylesheet.css}" rel="stylesheet">
+  </head>
+  <body>
+
+    <div class="topnav">
+      <a th:href="@{/}">Form</a>
+      <a th:href="@{/grades}">Grades</a>
+    </div>
+
+    <div class= "container">
+      <h2 > Grades </h2>
+      <table id="table"> 
+        <tr>
+          <th>Student</th>
+          <th>Subject</th>
+          <th>Score</th>
+        </tr>
+        <tr th:each="grade: ${grades}">
+          <td th:text="${grade.name}"></td>
+          <td th:text="${grade.subject}"></td>
+          <td th:text="${grade.score}"></td>
+          <td> <a role="button" class="update" th:href="@{/(id = ${grade.id})}">Update</a> </td>
+        </tr>
+      </table>
+    </div>
+    
+  </body>
+</html>

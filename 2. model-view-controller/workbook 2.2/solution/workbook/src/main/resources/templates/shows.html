@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shows</title>
+    </head>
+    <body>
+        <h2>IMDB: Top 5 Episodes</h2>
+        <table width="100%", border="solid">
+          <tr>
+            <th>Title</th>
+            <th>Episode</th>
+            <th>Rating</th>
+          </tr>
+          <tr th:object="${first}">
+            <td th:text="*{title}">Breaking Bad</td>
+            <td th:text="*{episode}">Ozymandias</td>
+            <td th:text="*{rating}">10.0</td>
+          </tr>
+          <tr th:object="${second}">
+            <td th:text="*{title}">Breaking Bad</td>
+            <td th:text="*{episode}">Ozymandias</td>
+            <td th:text="*{rating}">10.0</td>
+          </tr>
+          <tr th:object="${third}">
+            <td th:text="*{title}">Breaking Bad</td>
+            <td th:text="*{episode}">Ozymandias</td>
+            <td th:text="*{rating}">10.0</td>
+          </tr>
+          <tr th:object="${fourth}">
+            <td th:text="*{title}">Breaking Bad</td>
+            <td th:text="*{episode}">Ozymandias</td>
+            <td th:text="*{rating}">10.0</td>
+          </tr>
+          <tr th:object="${fifth}">
+            <td th:text="*{title}">Breaking Bad</td>
+            <td th:text="*{episode}">Ozymandias</td>
+            <td th:text="*{rating}">10.0</td>
+          </tr>
+        </table>        
+    </body>
+</html>
