@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.ltp</groupId>
 	<artifactId>workbook</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>workbook</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
