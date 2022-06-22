@@ -13,7 +13,7 @@ public class StoreService {
 
     StoreRepository storeRepository;
     
-    @Autowired //not needed (see workbook article)
+    @Autowired //not actually needed (see workbook article)
     public StoreService(StoreRepository storeRepository) {
         this.storeRepository = storeRepository;
     }
