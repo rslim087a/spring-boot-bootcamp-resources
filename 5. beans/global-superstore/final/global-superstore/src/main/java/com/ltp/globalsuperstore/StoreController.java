@@ -16,7 +16,7 @@ public class StoreController {
 
     StoreService storeService;
 
-    @Autowired
+    @Autowired //not needed (see workbook article)
     public StoreController(StoreService storeService) {
         this.storeService = storeService;
     }
