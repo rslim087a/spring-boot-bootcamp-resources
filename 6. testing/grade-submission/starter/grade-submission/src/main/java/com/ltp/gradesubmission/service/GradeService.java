@@ -16,15 +16,15 @@ public class GradeService {
     GradeRepository gradeRepository;
     
     public Grade getGrade(int index) {
-        return gradeRepository.getGrades().get(index);
+        return gradeRepository.getGrade(index);
     }
 
     public void addGrade(Grade grade) {
-        gradeRepository.getGrades().add(grade);
+        gradeRepository.addGrade(grade);
     }
 
     public void updateGrade(Grade grade, int index) {
-        gradeRepository.getGrades().set(index, grade);
+        gradeRepository.updateGrade(grade, index);
     }
     
     public List<Grade> getGrades() {
@@ -33,7 +33,7 @@ public class GradeService {
 
     public int getGradeIndex(String id) {
         for (int i = 0; i < getGrades().size(); i++) {
-            if (getGrades().get(i).getId().equals(id)) return i;
+            if (getGrade(i).getId().equals(id)) return i;
         }
         return Constants.NOT_FOUND;
     }
