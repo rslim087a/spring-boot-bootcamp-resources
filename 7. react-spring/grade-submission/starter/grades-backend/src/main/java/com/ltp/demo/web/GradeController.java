@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ltp.demo.pojo.Grade;
 
 @RestController
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*") //Not to worry. This will be covered later...
 public class GradeController {
     
     List<Grade> list = Arrays.asList(
