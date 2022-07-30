@@ -33,7 +33,7 @@ public class StudentController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<Student> getStudents() {
+    public ResponseEntity<List<Student>> getStudents() {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
