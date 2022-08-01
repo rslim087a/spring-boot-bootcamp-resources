@@ -32,7 +32,7 @@ public class CourseController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<Course> getCourses() {
+    public ResponseEntity<List<Course>> getCourses() {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
