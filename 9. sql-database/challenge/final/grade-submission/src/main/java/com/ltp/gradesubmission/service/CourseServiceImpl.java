@@ -23,7 +23,7 @@ public class CourseServiceImpl implements CourseService {
     @Override
     public Course getCourse(Long id) {
         Optional<Course> course = courseRepository.findById(id);
-        return (Course) Utility.unwrapEntity(course, id);
+        return Utility.unwrapEntity(course, id);
     }
 
     @Override
@@ -35,7 +35,7 @@ public class CourseServiceImpl implements CourseService {
     public Course addStudentToCourse(Long studentId, Long courseId) {
         Course course = getCourse(courseId);
         Optional<Student> student = studentRepository.findById(studentId);
-        Student unwrappedStudent = (Student) Utility.unwrapEntity(student, studentId);
+        Student unwrappedStudent = Utility.unwrapEntity(student, studentId);
         course.getStudents().add(unwrappedStudent);
         return courseRepository.save(course);
     }

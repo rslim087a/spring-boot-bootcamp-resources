@@ -21,7 +21,7 @@ public class CourseServiceImpl implements CourseService {
     @Override
     public Course getCourse(Long id) {
         Optional<Course> course = courseRepository.findById(id);
-        return (Course) Utility.unwrapEntity(course, id);
+        return Utility.unwrapEntity(course, id);
     }
 
     @Override

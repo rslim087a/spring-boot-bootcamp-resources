@@ -10,7 +10,7 @@ public class Utility {
     private static final String COURSE_TYPE = "Course";
     private static final String STUDENT_TYPE = "Student";
 
-    public static <T> Object unwrapEntity(Optional<T> entity, Long id) {
+    public static <T> T unwrapEntity(Optional<T> entity, Long id) {
         if (entity.isPresent()) return entity.get();
         else {
             switch (entity.getClass().getSimpleName()) {
