@@ -5,9 +5,9 @@ import java.util.Optional;
 
 import com.ltp.gradesubmission.entity.Course;
 import com.ltp.gradesubmission.entity.Student;
+import com.ltp.gradesubmission.exception.CourseNotFoundException;
 import com.ltp.gradesubmission.repository.CourseRepository;
 import com.ltp.gradesubmission.repository.StudentRepository;
-import com.ltp.gradesubmission.utils.Utility;
 
 import lombok.AllArgsConstructor;
 
@@ -23,7 +23,7 @@ public class CourseServiceImpl implements CourseService {
     @Override
     public Course getCourse(Long id) {
         Optional<Course> course = courseRepository.findById(id);
-        return Utility.unwrapEntity(course, id);
+        return unwrapCourse(course, id);
     }
 
     @Override
@@ -35,7 +35,7 @@ public class CourseServiceImpl implements CourseService {
     public Course addStudentToCourse(Long studentId, Long courseId) {
         Course course = getCourse(courseId);
         Optional<Student> student = studentRepository.findById(studentId);
-        Student unwrappedStudent = Utility.unwrapEntity(student, studentId);
+        Student unwrappedStudent = StudentServiceImpl.unwrapStudent(student, studentId);
         course.getStudents().add(unwrappedStudent);
         return courseRepository.save(course);
     }
@@ -54,6 +54,11 @@ public class CourseServiceImpl implements CourseService {
     public List<Student> getEnrolledStudents(Long id) {
         Course course = getCourse(id);
         return course.getStudents();
+    }
+
+    static Course unwrapCourse(Optional<Course> entity, Long id) {
+        if (entity.isPresent()) return entity.get();
+        else throw new CourseNotFoundException(id);
     }
 
 }
