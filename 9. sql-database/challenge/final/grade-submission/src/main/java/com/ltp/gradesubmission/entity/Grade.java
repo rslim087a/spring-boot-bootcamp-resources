@@ -14,15 +14,14 @@ import com.ltp.gradesubmission.validation.Score;
 
 import lombok.*;
 
-@Entity
-@Table(name = "grade", uniqueConstraints={
-    @UniqueConstraint(columnNames = {"student_id", "course_id"})
-}) 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-
+@Entity
+@Table(name = "grade", uniqueConstraints={
+    @UniqueConstraint(columnNames = {"student_id", "course_id"})
+}) 
 public class Grade {
 
     @Id

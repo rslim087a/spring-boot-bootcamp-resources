@@ -25,6 +25,7 @@ public class GradeSubmissionApplication implements CommandLineRunner {
 	@Autowired
 	CourseRepository courseRepository;
 
+
 	public static void main(String[] args) {
 		SpringApplication.run(GradeSubmissionApplication.class, args);
 	}

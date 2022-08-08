@@ -2,6 +2,7 @@ package com.ltp.gradesubmission.entity;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -48,6 +49,6 @@ public class Student {
 
     @JsonIgnore
     @ManyToMany(mappedBy = "students")
-    private List<Course> courses;
+    private Set<Course> courses;
 
 }

@@ -15,4 +15,5 @@ public interface GradeRepository extends CrudRepository<Grade, Long> {
      List<Grade> findByCourseId(Long courseId);
      @Transactional
      void deleteByStudentIdAndCourseId(Long studentId, Long courseId);
+
 }
