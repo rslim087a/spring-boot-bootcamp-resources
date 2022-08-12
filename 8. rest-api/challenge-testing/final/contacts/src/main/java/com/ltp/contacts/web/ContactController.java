@@ -23,7 +23,7 @@ import io.swagger.v3.oas.annotations.media.*;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
-@Tag(name = "Contact Controller", description = "Create, retrieve, update and delete contacts")
+@Tag(name = "Contact Controller", description = "Create and retrieve contacts")
 @RestController
 public class ContactController {
     
