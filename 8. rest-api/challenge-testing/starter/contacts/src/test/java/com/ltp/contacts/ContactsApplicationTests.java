@@ -11,10 +11,14 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
 @SpringBootTest
+@AutoConfigureMockMvc
 class ContactsApplicationTests {
 
 	@Autowired
-	ContactRepository contactRepository;
+        private MockMvc mockMvc;
+
+	@Autowired
+	private ContactRepository contactRepository;
 
 	private Contact[] contacts = new Contact[] {
 		new Contact("1", "Jon Snow", "6135342524"),
@@ -22,17 +26,17 @@ class ContactsApplicationTests {
 		new Contact("3", "The Hound", "3452125631"),
 	};
 
-	@BeforeEach
-    void setup(){
+	 @BeforeEach
+         void setup(){
 		for (int i = 0; i < contacts.length; i++) {
 			contactRepository.saveContact(contacts[i]);
 		}
-    }
+        }
 
 	@AfterEach
 	void clear(){
 		contactRepository.getContacts().clear();
-    }
+        }
 
 
 	@Test
