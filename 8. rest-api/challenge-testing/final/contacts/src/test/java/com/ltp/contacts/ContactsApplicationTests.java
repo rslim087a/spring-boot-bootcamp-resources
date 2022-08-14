@@ -75,7 +75,7 @@ class ContactsApplicationTests {
 	public void validContactCreation() throws Exception {
 		RequestBuilder request = MockMvcRequestBuilders.post("/contact")
 			.contentType(MediaType.APPLICATION_JSON)
-			.content(objectMapper.writeValueAsString(new Contact("Ron Weasley", "123456789")));
+			.content(objectMapper.writeValueAsString(new Contact("Rayan Slim", "123456789")));
 
 		mockMvc.perform(request).andExpect(status().isCreated());
 	}
