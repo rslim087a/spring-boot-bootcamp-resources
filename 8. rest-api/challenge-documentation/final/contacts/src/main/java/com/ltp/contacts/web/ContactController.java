@@ -52,7 +52,7 @@ public class ContactController {
     @Operation(summary = "Create Contact", description = "Creates a contact from the provided payload")
     @ApiResponses(value = {
         @ApiResponse(responseCode = "201", description = "Successful creation of contact"),
-        @ApiResponse(responseCode = "400", description = "Bad request: unsuccessful update", content = @Content(schema = @Schema(implementation = ErrorResponse.class)))
+        @ApiResponse(responseCode = "400", description = "Bad request: unsuccessful submission", content = @Content(schema = @Schema(implementation = ErrorResponse.class)))
      })
     @PostMapping(value = "/contact", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Contact> createContact(@Valid @RequestBody Contact contact) {
