@@ -26,7 +26,6 @@ import lombok.AllArgsConstructor;
 @RequestMapping("/student")
 public class StudentController {
 
-    @Autowired
     StudentService studentService;
     
     @GetMapping("/{id}")
