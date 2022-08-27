@@ -27,11 +27,7 @@ public class GradeServiceImpl implements GradeService {
     @Override
     public Grade getGrade(Long studentId, Long courseId) {
          Optional<Grade> grade = gradeRepository.findByStudentIdAndCourseId(studentId, courseId);
-         if (grade.isPresent()) {
-            return grade.get();
-         } else {
-            throw new GradeNotFoundException(studentId, courseId);
-         }
+         return unwrapGrade(grade, studentId, courseId);
     }
 
     @Override
