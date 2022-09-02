@@ -24,4 +24,9 @@ public class ContactRepository {
         contacts.add(contact);
     }
 
+    public void deleteContact(int index) {
+        contacts.remove(index);
+    }
+
+
 }
