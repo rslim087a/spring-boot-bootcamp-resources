@@ -19,8 +19,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUser(Long id) {
-        Optional<User> student = userRepository.findById(id);
-        return unwrapStudent(student, id);
+        Optional<User> user = userRepository.findById(id);
+        return unwrapUser(student, id);
     }
 
     @Override
@@ -28,7 +28,7 @@ public class UserServiceImpl implements UserService {
         return userRepository.save(user);
     }
 
-    static User unwrapStudent(Optional<User> entity, Long id) {
+    static User unwrapUser(Optional<User> entity, Long id) {
         if (entity.isPresent()) return entity.get();
         else throw new EntityNotFoundException(id, User.class);
     }
