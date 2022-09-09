@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getUser(Long id) {
         Optional<User> user = userRepository.findById(id);
-        return unwrapUser(student, id);
+        return unwrapUser(user, id);
     }
 
     @Override
