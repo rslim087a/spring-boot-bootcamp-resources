@@ -42,6 +42,11 @@ public class StudentServiceImpl implements StudentService {
     public List<Student> getStudents() {
         return (List<Student>)studentRepository.findAll();
     }
+    
+    static Student unwrapStudent(Optional<Student> entity, Long id) {
+        if (entity.isPresent()) return entity.get();
+        else throw new StudentNotFoundException(id);
+    }
 
 
 }
