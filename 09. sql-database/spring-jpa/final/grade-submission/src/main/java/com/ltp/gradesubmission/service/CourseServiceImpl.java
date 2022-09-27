@@ -41,5 +41,11 @@ public class CourseServiceImpl implements CourseService {
     public List<Course> getCourses() {
         return (List<Course>)courseRepository.findAll();
     }
+ 
+    static Course unwrapCourse(Optional<Course> entity, Long id) {
+        if (entity.isPresent()) return entity.get();
+        else throw new CourseNotFoundException(id);
+    }
+
 
 }
