@@ -21,7 +21,6 @@ public class StoreController {
     public String getForm(Model model, @RequestParam(required = false) String id) {
         int index = getIndexFromId(id);
         model.addAttribute("item", index == Constants.NOT_FOUND ? new Item() : items.get(index));
-        model.addAttribute("categories", Constants.CATEGORIES);
         return "form";
     }
 
@@ -57,7 +56,6 @@ public class StoreController {
         long diff = Math.abs(newDate.getTime() - oldDate.getTime());
         return (int) (TimeUnit.MILLISECONDS.toDays(diff)) <= 5;
     }
-
 
 
 }
