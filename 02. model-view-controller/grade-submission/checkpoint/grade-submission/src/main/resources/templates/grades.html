@@ -1,0 +1,45 @@
+<html xmlns:th="http://www.thymeleaf.org">
+  <head> 
+    <title>Grades</title>
+    <link th:href="@{/grades-stylesheet.css}" rel="stylesheet">
+  </head>
+  <body>
+    <div class="topnav">
+      <!-- Basic navigation links for the user interface -->
+      <a th:href="@{/}">Form</a>
+      <a th:href="@{/grades}">Grades</a>
+    </div>
+
+    <div class="container">
+      <h2>Grades</h2>
+      
+      <table id="table">
+        <tr>
+          <th>Student</th>
+          <th>Subject</th>
+          <th>Score</th>
+        </tr>
+        
+        <!-- When the backend provides a list named "grades",
+             each grade in that list is shown in a new row here.
+             We display the name, subject, and score,
+             plus an "Update" link so users can edit an existing record. -->
+        <tr th:each="grade: ${grades}">
+          <td th:text="${grade.name}"></td>
+          <td th:text="${grade.subject}"></td>
+          <td th:text="${grade.score}"></td>
+          
+          <!-- The "Update" link includes the grade's ID in the URL,
+               so the form page knows which record is being edited. -->
+          <td>
+            <a role="button" class="update"
+               th:href="@{/(id=${grade.id})}">
+               Update
+            </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    
+  </body>
+</html>

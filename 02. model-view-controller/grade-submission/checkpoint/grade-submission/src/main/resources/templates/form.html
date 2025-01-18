@@ -1,0 +1,38 @@
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Form</title>
+    <link th:href="@{/form-stylesheet.css}" rel="stylesheet">
+  </head>    
+  <body>
+    <div class="topnav">
+      <!-- Basic navigation links for user interface -->
+      <a th:href="@{/}">Form</a>
+      <a th:href="@{/grades}">Grades</a>
+    </div>
+    
+    <div class="container">
+      <h2>Grade Portal</h2>
+      
+      <!-- This form is set up to accept data for a single "grade" object.
+           When the user hits Submit, the data (including "id") is
+           sent to the backend at "/handleSubmit". -->
+      <form method="post"
+            th:object="${grade}"
+            th:action="@{/handleSubmit}"> 
+            
+        <!-- These fields correspond to the properties in the "Grade" class. 
+             The backend will receive any changes as a Grade object. -->
+        <input type="text" placeholder="Name" th:field="*{name}">
+        <input type="text" placeholder="Score" th:field="*{score}">
+        <input type="text" placeholder="Subject" th:field="*{subject}">
+        
+        <!-- "id" is hidden but still crucial for identifying whether this
+             is a new grade or an existing one. -->
+        <input type="hidden" th:field="*{id}">
+        
+        <br><br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </body>
+</html>
