@@ -1,1 +1,1 @@
-**Want to Become a Cloud and DevOps Engineer?** Visit https://rayanslim.com
+**Become a Cloud and DevOps Engineer:** https://rayanslim.com
